@@ -1,5 +1,6 @@
 import logging
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import openai
 
@@ -11,6 +12,15 @@ openai.api_key = "sk-proj-oRbDQtCNKId5E01vFbzkiHwnZgaualVPo83_U7lt-CLBzCGaq5a8CJ
 
 #Create FastAPI App
 app = FastAPI()
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 #Request Body Model
 class ChatRequest(BaseModel):
