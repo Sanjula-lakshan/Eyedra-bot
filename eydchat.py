@@ -8,7 +8,7 @@ import openai
 logging.basicConfig(level=logging.DEBUG)
 
 #Replace this with your actual OpenAI API key
-openai.api_key = "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"  # Replace with your real key
+openai.api_key = ""  # Replace with your real key
 
 #Create FastAPI App
 app = FastAPI()
